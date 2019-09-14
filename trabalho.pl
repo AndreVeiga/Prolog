@@ -110,5 +110,9 @@ retorno_investimento_por_banco(Nome, Tempo) :-
     carteira(BC, Tempo, ROI),
     X is Poupado * ROI,
     Retorno is X / 100,
-    write("No banco "), write(BC), write(" o retorno será de RS "), 
-    write(Retorno), write(" em "), write(Tempo), write(" meses.").
+    Total is Retorno * Tempo,
+    TotalReceber is Total + Poupado,
+    write("Investindo "),write(Poupado), write(" reais em "), write(Tempo), write(" meses, "),
+    write(" no "), write(BC), write(" você  recebe "), write(Retorno), write(" reais por mês.\n"),
+    write("Total Ganho: "), write(Total),
+    write("\nTotal Receber: "), write(TotalReceber).
