@@ -1,8 +1,9 @@
+%Comando para rodar no compilador PROLOG
 %swipl -s trabalho.pl 
-%itaú = 1, Santander = 2, Consultor = 3, Caixa = 4
-%pessoa(nome, renda, poupado, estabilidade, dependentes)
-%banco(nome, renda, poupado, estabilidade, dependentes)
-%carteira(banco, tempo, valor)
+%
+%pessoa     ( nome, renda, poupado, estabilidade, dependentes)
+%banco      ( nome, renda, poupado, estabilidade, dependentes)
+%carteira   (banco, tempo, juros)
 
 pessoa(juliano,     500,    250,    estavel,   0).
 pessoa(mariana,     9000,   25000,  estavel,    4).
