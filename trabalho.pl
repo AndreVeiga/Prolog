@@ -14,21 +14,21 @@ banco(consultor,    15000,  5000,   estavel,    4000).
 banco(santander,    30000, 10000,   estavel,    8000).
 banco(caixa,        50,     500,    estavel,    50).
 
-carteira(Banco, Tempo, 1) :- Banco == itau, Tempo < 13,!.
-carteira(Banco, Tempo, 3) :- Banco == itau, Tempo >= 13, Tempo < 60,!.
-carteira(Banco, Tempo, 5) :- Banco == itau, Tempo >= 60, Tempo < 120,!.
+carteira(Banco, Tempo, 1) :- Banco == itau, Tempo =< 12,!.
+carteira(Banco, Tempo, 3) :- Banco == itau, Tempo > 12, Tempo =< 60,!.
+carteira(Banco, Tempo, 5) :- Banco == itau, Tempo > 60, Tempo =< 120,!.
 carteira(Banco, Tempo,10) :- Banco == itau, Tempo > 120,!.
 
-carteira(Banco, Tempo, 2) :- Banco == santander, Tempo < 61,!.
-carteira(Banco, Tempo, 6) :- Banco == santander, Tempo >= 61, Tempo < 84,!.
-carteira(Banco, Tempo, 9) :- Banco == santander, Tempo >= 84, Tempo < 144,!.
+carteira(Banco, Tempo, 2) :- Banco == santander, Tempo =< 60,!.
+carteira(Banco, Tempo, 6) :- Banco == santander, Tempo > 60, Tempo =< 84,!.
+carteira(Banco, Tempo, 9) :- Banco == santander, Tempo > 84, Tempo =< 144,!.
 carteira(Banco, Tempo,10) :- Banco == santander, Tempo > 144,!.
 
 carteira(Banco, Tempo, 1) :- Banco == consultor, Tempo >= 0,!. 
 
-carteira(Banco, Tempo, 1) :- Banco == caixa, Tempo < 25,!.
-carteira(Banco, Tempo, 6) :- Banco == caixa, Tempo >= 25, Tempo < 84,!.
-carteira(Banco, Tempo, 9) :- Banco == caixa, Tempo >= 84, Tempo < 240,!.
+carteira(Banco, Tempo, 1) :- Banco == caixa, Tempo =< 24,!.
+carteira(Banco, Tempo, 6) :- Banco == caixa, Tempo > 25, Tempo =< 84,!.
+carteira(Banco, Tempo, 9) :- Banco == caixa, Tempo > 84, Tempo =< 240,!.
 carteira(Banco, Tempo,14) :- Banco == caixa, Tempo > 240,!.
 
 poupanca_pessoa(Cliente, Valor) :- pessoa(Cliente,_, Valor, _, _).
